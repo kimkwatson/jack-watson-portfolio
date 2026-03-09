@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Ward Signup API running");
+  res.send("API running");
 });
 
 const PORT = process.env.PORT || 3000;
