@@ -47,7 +47,7 @@ main {
 #menu li {
   font-size: 1.5rem;
   padding: .5rem;
-  transition: background-color .5s ease-out, color .5s ease-out;
+  transition: background-color .5s ease-out, color .2s ease-out;
 }
 
 #menu li:hover {
