@@ -4,23 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects</title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body>
   <h1>Engineering Projects</h1>
 
-  <% if (projects.length === 0) { %>
-    <p>No projects yet.</p>
-  <% } else { %>
-    <ul>
-      <% projects.forEach(project => { %>
-        <li>
-          <h2><%= project.title %></h2>
-          <p><%= project.summary %></p>
-          <p><strong>Category:</strong> <%= project.category %></p>
-        </li>
-      <% }) %>
-    </ul>
-  <% } %>
+  <div class="projects">
+  <% projects.forEach(project => { %>
+    <div class="project-card">
+      <h2><%= project.title %></h2>
+      <p><%= project.summary %></p>
+      <p><strong>Category:</strong> <%= project.category %></p>
+    </div>
+  <% }) %>
+</div>
 </body>
 </html>
