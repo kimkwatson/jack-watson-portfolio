@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 0 auto;
   padding: 2rem;
+  max-width: 1100px;
 }
 
 #heading {
@@ -19,6 +20,20 @@ main {
   text-align: right;
   align-content: center;
   border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 1rem;
+  transition: letter-spacing 0.2s ease, color 0.2s ease;
+}
+
+#title h1 {
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+#title h1:hover {
+  letter-spacing: 0.08em;
+  color: #444;
 }
 
 #headshot {
@@ -27,9 +42,10 @@ main {
 }
 
 #headshot img {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 150px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
   width: 300px;
+  max-width: 100%;
 }
 
 #menu {
@@ -37,34 +53,91 @@ main {
   text-align: right;
 }
 
-#menu ul {
+#menu-list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: .75rem;
 }
 
 #menu li {
-  font-size: 1.5rem;
-  padding: .5rem;
-  transition: background-color .5s ease-out, color .2s ease-out;
+  font-size: 1.4rem;
+  padding: .6rem .8rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  border-radius: 6px;
 }
 
 #menu li:hover {
-  background-color: black;
+  background-color: #222;
   color: white;
   cursor: pointer;
+  transform: translateY(-2px);
+}
+
+#social-media {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  grid-area: 3 / 2 / 4 / 3;
+  text-align: left;
+}
+
+#social-media li {
+  transition: transform .25s ease-out;
+}
+
+#social-media li:hover {
+  cursor: pointer;
+  transform: translateY(-6px);
 }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .project-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #heading {
+    height: 3rem;
+  }
+
+  #title,
+  #headshot,
+  #menu,
+  #social-media {
+    grid-area: auto;
+    text-align: center;
+  }
+
+  #menu-list,
+  #social-media {
+    align-items: center;
+    padding: 0;
+  }
+
+  #social-media {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
