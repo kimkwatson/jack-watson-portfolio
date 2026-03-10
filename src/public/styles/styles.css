@@ -20,15 +20,14 @@ main {
   text-align: right;
   align-content: center;
   border-bottom: 1px solid lightgray;
-  border-bottom: 1px solid #d9d9d9;
   padding-bottom: 1rem;
-  transition: letter-spacing 0.2s ease, color 0.2s ease;
 }
 
 #title h1 {
   font-size: 3rem;
   margin: 0;
   letter-spacing: 0.05em;
+  transition: letter-spacing 0.2s ease, color 0.2s ease;
 }
 
 #title h1:hover {
