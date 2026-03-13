@@ -1,8 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0 auto;
-  padding: 2rem;
   max-width: 1100px;
+  background: linear-gradient(white, #e5e5e5);
 }
 
 #heading {
@@ -13,6 +18,11 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+  border: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 10px;
 }
 
 #title {
@@ -20,6 +30,7 @@ main {
   text-align: right;
   align-content: center;
   border-bottom: 1px solid lightgray;
+  margin-left: 2.5rem;
 }
 
 #title h1 {
@@ -114,10 +125,16 @@ main {
   main {
     grid-template-columns: 1fr;
     gap: 2rem;
+    border: none;
   }
 
   #heading {
     height: 3rem;
+  }
+
+  #title {
+    margin-left: 0;
+    padding: 1rem;
   }
 
   #title,
