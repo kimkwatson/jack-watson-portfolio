@@ -3,6 +3,6 @@ import { renderProjectsPage } from "../controllers/projectController";
 
 const router = Router();
 
-router.get("/", renderProjectsPage);
+router.get("/projects", renderProjectsPage);
 
 export default router;

@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import path from "path";
 import { connectToDb } from "./db/connect";
 import projectRoutes from "./routes/projectRoutes";
+import contactRoutes from "./routes/contatRoutes";
 
 dotenv.config();
 
@@ -14,7 +15,8 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../src/public")));
-app.use("/projects", projectRoutes);
+app.use("/", projectRoutes);
+app.use("/", contactRoutes);
 
 app.get("/", (req, res) => {
   res.render("index");
