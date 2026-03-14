@@ -14,13 +14,23 @@
     <section id="contact-section">
         <form id="contact-form" method="POST">
         <label for="name">Name:</label>
-        <input type="text" name="name">
+        <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>
-        <input type="email" name="email">
+        <input type="email" id="email" name="email" required>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject">
         <label for="message">Message:</label>
-        <textarea></textarea>
-        <input id="send-btn" type="submit" value="Send">
+        <textarea id="contact-message" name="message" required></textarea>
+        <button id="send-btn" type="submit">Send</button>
         </form>
+
+        <% if (typeof successMessage !== "undefined") { %>
+        <p><%= successMessage %></p>
+        <% } %>
+
+        <% if (typeof errorMessage !== "undefined") { %>
+        <p><%= errorMessage %></p>
+        <% } %>
     </section>
     
 </body>

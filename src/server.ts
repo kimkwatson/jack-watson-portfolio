@@ -1,11 +1,11 @@
-import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
 import path from "path";
 import { connectToDb } from "./db/connect";
 import projectRoutes from "./routes/projectRoutes";
 import contactRoutes from "./routes/contatRoutes";
-
-dotenv.config();
 
 const app = express();
 
