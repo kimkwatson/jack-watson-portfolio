@@ -261,6 +261,19 @@ section {
   transform: scale(1.1);
 }
 
+footer {
+  padding: 1rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: #444;
+}
+
+footer a:hover {
+  border-bottom: 3px solid white;
+}
+
 /* mobile styles */
 
 @media (max-width: 768px) {
