@@ -3,10 +3,8 @@ import { createMessage } from "../services/messageService";
 import { notifyAdminOfMessage } from "../services/emailService";
 
 export function renderContactPage(req: Request, res: Response): void {
-  const successMessage =
-    req.query.success === "1" ? "Your message has been sent successfully." : undefined;
 
-  res.render("contact", { successMessage });
+  res.render("contact");
 }
 
 export async function submitContactForm(req: Request, res: Response): Promise<void> {
@@ -33,7 +31,7 @@ export async function submitContactForm(req: Request, res: Response): Promise<vo
       console.error("Message saved, but email notification failed:", emailError);
     }
 
-    res.redirect("contact?success=1");
+    res.redirect("/confirmation");
 
   } catch (error) {
     console.error("Error submitting contact form:", error);
