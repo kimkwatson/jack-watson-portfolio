@@ -17,24 +17,24 @@ body {
   position: relative;
 }
 
-#heading, section {
+.heading, section {
   position: relative;
   z-index: 1;
 }
 
-#heading {
+.heading {
   display: flex;
   height: 15rem;
   justify-content: left;
   padding: 1rem;
 }
 
-#heading svg {
+.heading svg {
   width: 44px;
   height: 44px;
 }
 
-#heading p {
+.heading p {
   padding-left: .5rem;
 }
 
@@ -154,6 +154,7 @@ section {
 /* background grid styles */
 
 .bg-grid {
+  will-change: background-position;
   position: fixed;
   top: 0;
   left: 0;
@@ -193,6 +194,10 @@ section {
 
 /* contact page styles */
 
+#contact-heading {
+  height: 15rem;
+}
+
 #contact-section {
   width: 800px;
   justify-self: center;
@@ -203,12 +208,12 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   gap: 10px;
 }
 
 #contact-form input {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: .5rem;
   border: 1px solid gray;
   border-radius: 10px;
@@ -216,7 +221,7 @@ section {
 }
 
 #contact-message {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   height: 10rem;
   width: 100%;
   border: 1px solid gray;
@@ -242,6 +247,7 @@ section {
   border: 1px solid gray;
   border-radius: 10px;
   padding: 1rem;
+  margin-top: 2rem;
   cursor: pointer;
 }
 
@@ -252,13 +258,13 @@ section {
 }
 
 #send-btn:not(:disabled) {
-  background-color: navy;
+  background-color: #999;
   color: white;
   cursor: pointer;
 }
 
 #send-btn:hover {
-  transform: scale(1.1);
+  transform: scaleY(-2px);
 }
 
 footer {
