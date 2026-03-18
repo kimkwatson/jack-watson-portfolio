@@ -24,7 +24,7 @@ body {
 
 .heading {
   display: flex;
-  height: 15rem;
+  height: clamp(1rem, 12vh, 15rem);
   justify-content: left;
   padding: 1rem;
 }
@@ -36,6 +36,10 @@ body {
 
 .heading p {
   padding-left: .5rem;
+}
+
+h1 {
+  padding: 1rem;
 }
 
 section {
@@ -195,12 +199,17 @@ section {
 /* contact page styles */
 
 #contact-heading {
-  height: 15rem;
+  height: clamp(1rem, 12vh, 15rem);
+}
+
+#contact-title {
+  padding: 1rem;
 }
 
 #contact-section {
-  width: 800px;
-  justify-self: center;
+  width: 100%;
+  max-width: clamp(100vw, 44vw, 1100px);
+  margin: 0 auto;
 }
 
 #contact-form {
@@ -264,7 +273,7 @@ section {
 }
 
 #send-btn:hover {
-  transform: scaleY(-2px);
+  transform: translateY(-2px);
 }
 
 footer {
@@ -288,10 +297,11 @@ footer a:hover {
     grid-template-columns: 1fr;
     gap: 2rem;
     border: none;
+    box-shadow: none;
   }
 
-  #heading {
-    height: 5rem;
+  #heading, #contact-heading {
+    height: auto;
   }
 
   #title {
@@ -316,5 +326,24 @@ footer a:hover {
   #social-media {
     flex-direction: row;
     justify-content: center;
+  }
+
+  #contact-section {
+    display: block;
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  #contact-form {
+    font-size: 1.1rem;
+  }
+
+  #contat-form input, #contact-message {
+    font-size: 1.1rem;
+  }
+
+  #send-btn {
+    width: 100%;
   }
 }

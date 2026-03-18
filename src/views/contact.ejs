@@ -14,31 +14,33 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
         </svg>
         <p>Engineering Student Portfolio</p>
-        <h1 id="contact-title">Send me an email!</h1>
     </header>
+    <h1 id="contact-title">Send me an email!</h1>
+    <main>
+        <section id="contact-section">
+            <form id="contact-form" action="/contact" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="message">Message:</label>
+                <textarea id="contact-message" name="message" required></textarea>
+                <button id="send-btn" type="submit">Send</button>
+            </form>
+            <a href="/">Return to Home</a>
+            <% if (typeof successMessage !== "undefined") { %>
+            <p><%= successMessage %></p>
+            <% } %>
 
-    <section id="contact-section">
-        <form id="contact-form" action="/contact" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" required>
-        <label for="message">Message:</label>
-        <textarea id="contact-message" name="message" required></textarea>
-        <button id="send-btn" type="submit">Send</button>
-        </form>
-
-        <% if (typeof successMessage !== "undefined") { %>
-        <p><%= successMessage %></p>
-        <% } %>
-
-        <% if (typeof errorMessage !== "undefined") { %>
-        <p><%= errorMessage %></p>
-        <% } %>
-    </section>
-    <a href="/">Return to Home</a>
+            <% if (typeof errorMessage !== "undefined") { %>
+            <p><%= errorMessage %></p>
+            <% } %>
+        </section>
+    
+    </main>
+    
     <script>
         const form = document.getElementById('contact-form');
         const button = document.getElementById('send-btn');
