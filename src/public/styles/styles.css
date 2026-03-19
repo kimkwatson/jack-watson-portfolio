@@ -24,9 +24,11 @@ body {
 
 .heading {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   height: clamp(1rem, 12vh, 15rem);
-  justify-content: left;
-  padding: 1rem;
+  padding: 2.5rem 1rem 1.5rem;
+  gap: .75rem;
 }
 
 .heading svg {
@@ -36,6 +38,19 @@ body {
 
 .heading p {
   padding-left: .5rem;
+}
+
+.heading a {
+  text-decoration: none;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #555;
+  font-size: .95rem;
+  letter-spacing: .04em;
 }
 
 h1 {
@@ -59,6 +74,12 @@ section {
   align-content: center;
   border-bottom: 1px solid lightgray;
   margin-left: 2.5rem;
+}
+
+#title:hover {
+  letter-spacing: 0.06em;
+  color: #444;
+  transition: all 0.2s ease;
 }
 
 #title h1 {
@@ -204,6 +225,16 @@ section {
 
 #contact-title {
   padding: 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 0;
+  letter-spacing: 0.03em;
+  color: #222;
+}
+
+#contact-title:hover {
+  letter-spacing: 0.06em;
+  color: #444;
+  transition: all 0.2s ease;
 }
 
 #contact-section {
@@ -272,7 +303,7 @@ section {
   cursor: pointer;
 }
 
-#send-btn:hover {
+#send-btn#send-btn:not(:disabled):hover {
   transform: translateY(-2px);
 }
 
@@ -283,11 +314,13 @@ footer {
 footer a {
   text-decoration: none;
   color: #444;
+  padding: .75rem;
 }
 
 footer a:hover {
-  border-bottom: 3px solid white;
+  background-color: white;
   font-weight: 500;
+  border-radius: 6px;
 }
 
 /* mobile styles */
@@ -300,13 +333,15 @@ footer a:hover {
     box-shadow: none;
   }
 
-  #heading, #contact-heading {
+  .heading {
     height: auto;
+    padding: 1.5rem 1rem 1rem;
   }
 
-  #title {
+  #title, #contact-title {
     margin-left: 0;
     padding: 1rem;
+    font-size: 1.6rem;
   }
 
   #title,
