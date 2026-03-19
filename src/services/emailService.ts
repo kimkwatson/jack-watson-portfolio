@@ -36,12 +36,17 @@ export async function notifyAdminOfMessage(message: ContactMessage): Promise<voi
     throw new Error("ADMIN_EMAIL is not configured.");
   }
 
-  await transporter.sendMail({
-    from: process.env.SMTP_FROM || process.env.SMTP_USER,
-    to: adminEmail,
-    replyTo: message.email,
-    subject: `New portfolio contact: ${message.subject}`,
-    text: `
+  console.log("About to send email");
+  console.log("SMTP host:", process.env.SMTP_HOST);
+  console.log("Admin email:", adminEmail);
+
+  try {
+    const info = await transporter.sendMail({
+      from: process.env.SMTP_FROM || process.env.SMTP_USER,
+      to: adminEmail,
+      replyTo: message.email,
+      subject: `New portfolio contact: ${message.subject}`,
+      text: `
 You received a new contact form submission.
 
 Name: ${message.name}
@@ -50,6 +55,12 @@ Subject: ${message.subject}
 
 Message:
 ${message.message}
-    `.trim()
-  });
+      `.trim()
+    });
+
+    console.log("Email sent:", info.response);
+  } catch (error) {
+    console.error("sendMail failed:", error);
+    throw error;
+  }
 }
