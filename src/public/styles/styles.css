@@ -76,12 +76,6 @@ section {
   margin-left: 2.5rem;
 }
 
-#title:hover {
-  letter-spacing: 0.06em;
-  color: #444;
-  transition: all 0.2s ease;
-}
-
 #title h1 {
   font-size: 3rem;
   margin: 0;
